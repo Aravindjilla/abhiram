@@ -9,7 +9,9 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
             lerp: 0.1,
             duration: 1.5,
             smoothWheel: true,
-            orientation: 'vertical'
+            orientation: 'vertical',
+            touchMultiplier: 2,
+            syncTouch: true
         }}>
             {children}
         </ReactLenis>

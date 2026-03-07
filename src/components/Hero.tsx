@@ -18,11 +18,11 @@ const Hero = () => {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
     return (
-        <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-background">
+        <section ref={ref} className="relative min-h-[100svh] w-full overflow-hidden flex items-center justify-center bg-background">
             {/* Parallax Background */}
             <motion.div
                 style={{ y, scale }}
-                className="absolute inset-0 z-0"
+                className="absolute inset-0 z-0 will-change-transform"
             >
                 <div className="absolute inset-0 z-0">
                     <Image
