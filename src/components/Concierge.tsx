@@ -38,7 +38,7 @@ export default function Concierge() {
                             The <span className="text-gold">Abhiram</span> Concierge
                         </h2>
                         <p className="text-charcoal/60 text-lg mb-12 font-medium leading-relaxed">
-                            We don't just hand over keys; we hand over a promise. Our Concierge service ensures that your dream home stays in pristine condition, backed by experts who built it.
+                            We don&apos;t just hand over keys; we hand over a promise. Our Concierge service ensures that your dream home stays in pristine condition, backed by experts who built it.
                         </p>
 
                         <div className="grid sm:grid-cols-2 gap-8">

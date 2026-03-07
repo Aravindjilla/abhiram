@@ -28,7 +28,7 @@ export default function NotFound() {
 
                     <p className="text-charcoal/60 text-lg md:text-xl mb-12 font-medium leading-relaxed">
                         The blueprint for this page seems to be missing. <br className="hidden md:block" />
-                        Let's get you back to the main site where the building happens.
+                        Let&apos;s get you back to the main site where the building happens.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
