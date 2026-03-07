@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowRight, Check, RefreshCw, Smartphone } from 'lucide-react';
+import Image from 'next/image';
 
 const questions = [
     {
@@ -178,10 +179,11 @@ const StyleMatcher = () => {
                                 >
                                     <div className="grid md:grid-cols-2 gap-12 items-center">
                                         <div className="relative group overflow-hidden rounded-3xl aspect-[4/5] md:aspect-square">
-                                            <img
+                                            <Image
                                                 src={results[finalStyle].image}
                                                 alt={results[finalStyle].title}
-                                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                                fill
+                                                className="object-cover transition-transform duration-1000 group-hover:scale-110"
                                             />
                                             <div className="absolute inset-0 bg-gold/20" />
                                         </div>

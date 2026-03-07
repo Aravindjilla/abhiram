@@ -41,23 +41,23 @@ const LeadGenHub = () => {
         setIsSubmitted(true);
     };
 
-    const updateFormData = (field: string, value: string) => {
-        setFormData((prev: any) => ({ ...prev, [field]: value }));
+    const updateFormData = (field: keyof typeof formData, value: string) => {
+        setFormData((prev) => ({ ...prev, [field]: value }));
         setError(''); // Clear error whenever any field changes
     };
 
     return (
-        <section id="contact" className="py-24 bg-white relative overflow-hidden">
+        <section id="contact" className="py-24 bg-background relative overflow-hidden transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
 
                     {/* Text Content */}
                     <div>
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Get a Quote</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-charcoal uppercase tracking-tight mb-8">
+                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight mb-8">
                             Start Your <span className="text-gold">Home Journey</span> Today
                         </h2>
-                        <p className="text-charcoal/60 text-lg mb-12 max-w-xl">
+                        <p className="text-foreground/60 text-lg mb-12 max-w-xl">
                             Tell us a bit about your dream project, and our experts will provide a customized cost estimate and Vastu-compliant plan within 24 hours.
                         </p>
 
@@ -110,7 +110,7 @@ const LeadGenHub = () => {
                                             initial: { y: 20, opacity: 0 },
                                             animate: { y: 0, opacity: 1 }
                                         }}
-                                        className="text-3xl font-black text-charcoal mb-4 uppercase tracking-[0.2em]"
+                                        className="text-3xl font-black text-foreground mb-4 uppercase tracking-[0.2em]"
                                     >
                                         Blueprint <span className="text-gold">Acquired</span>
                                     </motion.h3>
@@ -122,13 +122,13 @@ const LeadGenHub = () => {
                                         }}
                                         className="space-y-4 mb-10"
                                     >
-                                        <p className="text-charcoal/80 text-lg font-medium leading-relaxed max-w-xs mx-auto">
+                                        <p className="text-foreground/80 text-lg font-medium leading-relaxed max-w-xs mx-auto">
                                             Your blueprint for luxury is being reviewed by our chief architect.
                                         </p>
                                         <div className="h-0.5 w-12 bg-gold/30 mx-auto" />
-                                        <p className="text-charcoal/50 text-xs font-bold uppercase tracking-widest">
+                                        <p className="text-foreground/50 text-xs font-bold uppercase tracking-widest">
                                             Our concierge will contact you on <br />
-                                            <span className="text-charcoal font-black">{formData.phone}</span> <br />
+                                            <span className="text-foreground font-black">{formData.phone}</span> <br />
                                             within 24 hours.
                                         </p>
                                     </motion.div>
@@ -169,11 +169,11 @@ const LeadGenHub = () => {
                                                     <motion.div
                                                         animate={{
                                                             scale: isActive ? 1.1 : 1,
-                                                            backgroundColor: isCompleted || isActive ? 'var(--gold)' : '#ffffff'
+                                                            backgroundColor: isCompleted || isActive ? 'var(--gold)' : 'var(--background)'
                                                         }}
-                                                        className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 shadow-sm ring-4 ring-white ${isCompleted || isActive
+                                                        className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 shadow-sm ring-4 ring-background ${isCompleted || isActive
                                                             ? 'border-gold text-white'
-                                                            : 'border-marble-gray/50 text-charcoal/20'
+                                                            : 'border-marble-gray/50 text-foreground/20'
                                                             }`}
                                                     >
                                                         {isCompleted ? (
@@ -187,7 +187,7 @@ const LeadGenHub = () => {
                                                             <step.icon size={18} />
                                                         )}
                                                     </motion.div>
-                                                    <span className={`text-[10px] uppercase font-black tracking-[0.2em] mt-3 transition-colors duration-500 ${isActive ? 'text-gold' : isCompleted ? 'text-charcoal/60' : 'text-charcoal/20'
+                                                    <span className={`text-[10px] uppercase font-black tracking-[0.2em] mt-3 transition-colors duration-500 ${isActive ? 'text-gold' : isCompleted ? 'text-foreground/60' : 'text-foreground/20'
                                                         }`}>
                                                         {step.title}
                                                     </span>
@@ -207,7 +207,7 @@ const LeadGenHub = () => {
                                                     exit={{ opacity: 0, x: -20 }}
                                                     className="space-y-6"
                                                 >
-                                                    <h4 className="text-xl font-bold text-charcoal uppercase tracking-wide mb-6">Approximate Plot Size</h4>
+                                                    <h4 className="text-xl font-bold text-foreground uppercase tracking-wide mb-6">Approximate Plot Size</h4>
                                                     <div className="grid grid-cols-2 gap-4">
                                                         {['150-200 SQYD', '200-300 SQYD', '300-500 SQYD', '500+ SQYD'].map((size) => (
                                                             <button
@@ -216,7 +216,7 @@ const LeadGenHub = () => {
                                                                 onClick={() => updateFormData('plotSize', size)}
                                                                 className={`p-4 rounded-xl border-2 text-sm font-bold transition-all ${formData.plotSize === size
                                                                     ? 'border-gold bg-gold/5 text-gold'
-                                                                    : 'border-marble-gray/30 text-charcoal/60 hover:border-gold/30'
+                                                                    : 'border-marble-gray/30 text-foreground/60 hover:border-gold/30'
                                                                     }`}
                                                             >
                                                                 {size}
@@ -234,7 +234,7 @@ const LeadGenHub = () => {
                                                     exit={{ opacity: 0, x: -20 }}
                                                     className="space-y-6"
                                                 >
-                                                    <h4 className="text-xl font-bold text-charcoal uppercase tracking-wide mb-6">Preferred Location</h4>
+                                                    <h4 className="text-xl font-bold text-foreground uppercase tracking-wide mb-6">Preferred Location</h4>
                                                     <div className="grid grid-cols-2 gap-4">
                                                         {['Uppal', 'Ghatkesar', 'Pocharam', 'Other'].map((loc) => (
                                                             <button
@@ -243,7 +243,7 @@ const LeadGenHub = () => {
                                                                 onClick={() => updateFormData('location', loc)}
                                                                 className={`p-4 rounded-xl border-2 text-sm font-bold transition-all ${formData.location === loc
                                                                     ? 'border-gold bg-gold/5 text-gold'
-                                                                    : 'border-marble-gray/30 text-charcoal/60 hover:border-gold/30'
+                                                                    : 'border-marble-gray/30 text-foreground/60 hover:border-gold/30'
                                                                     }`}
                                                             >
                                                                 {loc}
@@ -261,7 +261,7 @@ const LeadGenHub = () => {
                                                     exit={{ opacity: 0, x: -20 }}
                                                     className="space-y-6"
                                                 >
-                                                    <h4 className="text-xl font-bold text-charcoal uppercase tracking-wide mb-6">Contact Details</h4>
+                                                    <h4 className="text-xl font-bold text-foreground uppercase tracking-wide mb-6">Contact Details</h4>
                                                     <div className="space-y-4">
                                                         <input
                                                             type="text"
@@ -269,7 +269,7 @@ const LeadGenHub = () => {
                                                             value={formData.name}
                                                             onChange={(e) => updateFormData('name', e.target.value)}
                                                             onBlur={() => setTouched(prev => ({ ...prev, name: true }))}
-                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-charcoal outline-none ${touched.name && !formData.name.trim() ? 'border-red-500 bg-red-50/50' : 'border-marble-gray/30 focus:border-gold'}`}
+                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-foreground bg-background outline-none ${touched.name && !formData.name.trim() ? 'border-red-500 bg-red-50/5' : 'border-marble-gray/30 focus:border-gold'}`}
                                                         />
                                                         <input
                                                             type="tel"
@@ -277,7 +277,7 @@ const LeadGenHub = () => {
                                                             value={formData.phone}
                                                             onChange={(e) => updateFormData('phone', e.target.value.replace(/\D/g, '').slice(0, 10))}
                                                             onBlur={() => setTouched(prev => ({ ...prev, phone: true }))}
-                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-charcoal outline-none ${(touched.phone && formData.phone.length > 0 && formData.phone.length < 10) || (touched.phone && error.includes('phone')) ? 'border-red-500 bg-red-50/50' : 'border-marble-gray/30 focus:border-gold'}`}
+                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-foreground bg-background outline-none ${(touched.phone && formData.phone.length > 0 && formData.phone.length < 10) || (touched.phone && error.includes('phone')) ? 'border-red-500 bg-red-50/5' : 'border-marble-gray/30 focus:border-gold'}`}
                                                         />
                                                         {touched.phone && formData.phone.length > 0 && formData.phone.length < 10 && (
                                                             <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest pl-2">Please enter all 10 digits</p>
@@ -302,7 +302,7 @@ const LeadGenHub = () => {
                                                 <button
                                                     type="button"
                                                     onClick={prevStep}
-                                                    className="flex-1 p-4 rounded-xl border-2 border-charcoal/10 text-charcoal font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2 hover:bg-charcoal/5 transition-all"
+                                                    className="flex-1 p-4 rounded-xl border-2 border-foreground/10 text-foreground font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2 hover:bg-foreground/5 transition-all"
                                                 >
                                                     <ArrowLeft size={16} />
                                                     Back
@@ -343,7 +343,7 @@ const LeadGenHub = () => {
 
                         {/* Background Accent */}
                         <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold blur-[80px] opacity-20" />
-                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-charcoal blur-[80px] opacity-10" />
+                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-foreground blur-[80px] opacity-10" />
                     </div>
 
                 </div>
