@@ -62,22 +62,22 @@ export default function Concierge() {
                     </div>
 
                     <div className="lg:w-1/2 relative">
-                        <div className="relative aspect-square max-w-md mx-auto">
+                        <div className="relative aspect-auto lg:min-h-[480px] max-w-md mx-auto">
                             <div className="absolute inset-0 bg-gold/5 rounded-[3rem] -rotate-6 transform scale-105" />
-                            <div className="relative z-10 w-full h-full glass rounded-[3rem] border-2 border-gold/10 p-10 flex flex-col justify-center items-center text-center shadow-2xl">
-                                <div className="w-24 h-24 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-8">
-                                    <ShieldCheck size={48} />
+                            <div className="relative z-10 w-full lg:min-h-[480px] glass rounded-[3rem] border-2 border-gold/10 p-8 md:p-12 flex flex-col justify-center items-center text-center shadow-2xl">
+                                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-6 md:mb-8">
+                                    <ShieldCheck size={40} className="md:w-12 md:h-12" />
                                 </div>
-                                <h3 className="text-2xl font-black text-foreground uppercase tracking-wider mb-4">Quality Certified</h3>
-                                <p className="text-foreground/60 text-sm font-medium mb-10">
+                                <h3 className="text-xl md:text-2xl font-black text-foreground uppercase tracking-wider mb-4">Quality Certified</h3>
+                                <p className="text-foreground/60 text-sm font-medium mb-8 md:mb-10">
                                     Every project at Abhiram Constructions undergoes a 120-point quality check before the final handover.
                                 </p>
 
                                 <div className="space-y-4 w-full">
                                     {['Structural Stability Certificate', 'Material Quality Reports', 'Vastu Certification'].map((cert) => (
-                                        <div key={cert} className="flex items-center gap-3 bg-foreground/5 p-4 rounded-xl border border-gold/10 shadow-sm backdrop-blur-md">
+                                        <div key={cert} className="flex items-center gap-3 bg-foreground/5 p-3 md:p-4 rounded-xl border border-gold/10 shadow-sm backdrop-blur-md">
                                             <CheckCircle size={18} className="text-gold" />
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground">{cert}</span>
+                                            <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-foreground">{cert}</span>
                                         </div>
                                     ))}
                                 </div>

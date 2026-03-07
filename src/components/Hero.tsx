@@ -18,7 +18,7 @@ const Hero = () => {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
     return (
-        <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal">
+        <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-background">
             {/* Parallax Background */}
             <motion.div
                 style={{ y, scale }}
@@ -34,7 +34,7 @@ const Hero = () => {
                         sizes="100vw"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/20 to-marble-white/10 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/10 z-10" />
             </motion.div>
 
             {/* Content */}

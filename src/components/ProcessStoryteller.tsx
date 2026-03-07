@@ -39,7 +39,7 @@ const steps = [
 
 const ProcessStoryteller = () => {
     return (
-        <section id="process" className="py-24 bg-marble relative overflow-hidden">
+        <section id="process" className="py-24 bg-marble relative overflow-hidden scroll-mt-24">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
                     <motion.span
@@ -52,7 +52,7 @@ const ProcessStoryteller = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-5xl font-black text-charcoal uppercase tracking-tight"
+                        className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight"
                     >
                         Our Construction <span className="text-gold">Journey</span>
                     </motion.h2>
@@ -77,8 +77,8 @@ const ProcessStoryteller = () => {
                                 <div className="flex-1 text-center md:text-left">
                                     <div className={`glass p-8 rounded-2xl border-l-4 border-gold transition-transform hover:scale-[1.02] duration-300 ${index % 2 === 0 ? 'md:text-right md:border-l-0 md:border-r-4' : ''
                                         }`}>
-                                        <h3 className="text-2xl font-bold text-charcoal mb-3 uppercase tracking-wider">{step.title}</h3>
-                                        <p className="text-charcoal/70 leading-relaxed font-medium">
+                                        <h3 className="text-2xl font-bold text-foreground mb-3 uppercase tracking-wider">{step.title}</h3>
+                                        <p className="text-foreground/70 leading-relaxed font-medium">
                                             {step.description}
                                         </p>
                                     </div>
@@ -100,7 +100,7 @@ const ProcessStoryteller = () => {
 
             {/* Background Accents */}
             <div className="absolute top-1/4 -left-20 w-64 h-64 bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-charcoal/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-foreground/5 rounded-full blur-[120px] pointer-events-none" />
         </section>
     );
 };

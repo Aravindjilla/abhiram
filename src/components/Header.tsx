@@ -80,14 +80,14 @@ const Header = () => {
                     >
                         <div className="flex flex-col p-6 gap-4">
                             <div className="flex items-center justify-between mb-4">
-                                <span className="text-sm font-bold uppercase tracking-widest text-charcoal/40">Switch Theme</span>
+                                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">Switch Theme</span>
                                 <ThemeToggle />
                             </div>
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-lg font-semibold text-charcoal hover:text-gold py-2 border-b border-marble-gray/30"
+                                    className="text-lg font-semibold text-foreground hover:text-gold py-2 border-b border-marble-gray/30"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.name}

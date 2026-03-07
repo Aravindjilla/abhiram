@@ -14,11 +14,11 @@ const Footer = () => {
                                 A
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-xl font-bold tracking-wider text-charcoal">ABHIRAM</span>
+                                <span className="text-xl font-bold tracking-wider text-foreground">ABHIRAM</span>
                                 <span className="text-[10px] tracking-[0.2em] text-gold font-semibold uppercase">Constructions</span>
                             </div>
                         </Link>
-                        <p className="text-sm text-charcoal/60 leading-relaxed max-w-xs">
+                        <p className="text-sm text-foreground/60 leading-relaxed max-w-xs">
                             Building trust into every brick. Expert construction services in Hyderabad, specialising in duplexes, independent houses, and premium apartments.
                         </p>
                         <div className="flex gap-4">
@@ -36,13 +36,13 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div className="space-y-6">
-                        <h4 className="text-charcoal font-bold uppercase tracking-widest text-sm">Quick Links</h4>
+                        <h4 className="text-foreground font-bold uppercase tracking-widest text-sm">Quick Links</h4>
                         <nav className="flex flex-col gap-3">
                             {['Home', 'About Us', 'Services', 'Portfolio', 'Contact'].map((link) => (
                                 <Link
                                     key={link}
                                     href="#"
-                                    className="text-sm text-charcoal/60 hover:text-gold transition-colors duration-300"
+                                    className="text-sm text-foreground/60 hover:text-gold transition-colors duration-300"
                                 >
                                     {link}
                                 </Link>
@@ -52,13 +52,13 @@ const Footer = () => {
 
                     {/* Our Services */}
                     <div className="space-y-6">
-                        <h4 className="text-charcoal font-bold uppercase tracking-widest text-sm">Our Services</h4>
+                        <h4 className="text-foreground font-bold uppercase tracking-widest text-sm">Our Services</h4>
                         <nav className="flex flex-col gap-3">
                             {['Residential Construction', 'Commercial Buildings', 'Interior Design', 'Renovations', 'Project Management'].map((link) => (
                                 <Link
                                     key={link}
                                     href="#"
-                                    className="text-sm text-charcoal/60 hover:text-gold transition-colors duration-300"
+                                    className="text-sm text-foreground/60 hover:text-gold transition-colors duration-300"
                                 >
                                     {link}
                                 </Link>
@@ -68,19 +68,19 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div className="space-y-6">
-                        <h4 className="text-charcoal font-bold uppercase tracking-widest text-sm">Contact Us</h4>
+                        <h4 className="text-foreground font-bold uppercase tracking-widest text-sm">Contact Us</h4>
                         <div className="space-y-4">
                             <div className="flex items-start gap-3">
                                 <MapPin size={18} className="text-gold mt-1 flex-shrink-0" />
-                                <span className="text-sm text-charcoal/60 leading-relaxed">
+                                <span className="text-sm text-foreground/60 leading-relaxed">
                                     Uppal & Ghatkesar Area,<br />Hyderabad, Telangana 500092
                                 </span>
                             </div>
-                            <a href="tel:+917799954555" className="flex items-center gap-3 text-sm text-charcoal/60 leading-relaxed hover:text-gold transition-colors duration-300">
+                            <a href="tel:+917799954555" className="flex items-center gap-3 text-sm text-foreground/60 leading-relaxed hover:text-gold transition-colors duration-300">
                                 <Phone size={18} className="text-gold flex-shrink-0" />
                                 <span>+91 77999 54555</span>
                             </a>
-                            <a href="mailto:aravindjilla9@gmail.com" className="flex items-center gap-3 text-sm text-charcoal/60 leading-relaxed hover:text-gold transition-colors duration-300">
+                            <a href="mailto:aravindjilla9@gmail.com" className="flex items-center gap-3 text-sm text-foreground/60 leading-relaxed hover:text-gold transition-colors duration-300">
                                 <Mail size={18} className="text-gold flex-shrink-0" />
                                 <span>aravindjilla9@gmail.com</span>
                             </a>
@@ -89,12 +89,12 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-8 border-t border-marble-gray/20 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-charcoal/40 font-medium tracking-wider uppercase">
+                    <p className="text-xs text-foreground/40 font-medium tracking-wider uppercase">
                         © {new Date().getFullYear()} Abhiram Constructions. All Rights Reserved.
                     </p>
                     <div className="flex gap-6">
-                        <Link href="#" className="text-[10px] text-charcoal/40 font-semibold hover:text-gold transition-colors duration-300 uppercase tracking-widest">Privacy Policy</Link>
-                        <Link href="#" className="text-[10px] text-charcoal/40 font-semibold hover:text-gold transition-colors duration-300 uppercase tracking-widest">Terms & Conditions</Link>
+                        <Link href="#" className="text-[10px] text-foreground/40 font-semibold hover:text-gold transition-colors duration-300 uppercase tracking-widest">Privacy Policy</Link>
+                        <Link href="#" className="text-[10px] text-foreground/40 font-semibold hover:text-gold transition-colors duration-300 uppercase tracking-widest">Terms & Conditions</Link>
                     </div>
                 </div>
             </div>

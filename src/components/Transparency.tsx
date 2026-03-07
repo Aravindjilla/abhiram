@@ -11,7 +11,7 @@ const brands = [
     { name: 'Finolex', logo: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=200&auto=format&fit=crop', color: '#0047AB' }, // Electrical wires
     { name: 'Asian Paints', logo: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?q=80&w=200&auto=format&fit=crop', color: '#E31E24' }, // Paint drops
     { name: 'Astral Pipes', logo: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop', color: '#00A86B' }, // CPVC Pipes
-    { name: 'Kajaria Tiles', logo: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=200&auto=format&fit=crop', color: '#36454F' }, // Ceramic tiles
+    { name: 'Kajaria Tiles', logo: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=200&auto=format&fit=crop', color: '#808080' }, // Ceramic tiles
 ];
 
 const badges = [

@@ -156,7 +156,7 @@ const Portfolio = () => {
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <section id="portfolio" className="py-24 bg-background relative transition-colors duration-500">
+        <section id="portfolio" className="py-24 bg-background relative transition-colors duration-500 scroll-mt-24">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 text-center md:text-left">
                     <div>

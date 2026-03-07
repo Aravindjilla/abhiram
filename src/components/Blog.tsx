@@ -10,12 +10,12 @@ import { blogPosts as posts } from '@/data/blog-posts';
 
 const Blog = () => {
     return (
-        <section id="blog" className="py-24 bg-marble relative overflow-hidden">
+        <section id="blog" className="py-24 bg-marble relative overflow-hidden scroll-mt-24">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
                     <div className="text-center md:text-left">
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Knowledge Hub</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-charcoal uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight">
                             Building <span className="text-gold">Insights</span>
                         </h2>
                     </div>
@@ -44,14 +44,14 @@ const Blog = () => {
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute top-4 left-4">
-                                        <span className="px-4 py-1.5 bg-white text-charcoal text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
+                                        <span className="px-4 py-1.5 bg-background text-foreground text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
                                             {post.category}
                                         </span>
                                     </div>
                                 </div>
 
                                 <div className="space-y-4">
-                                    <div className="flex items-center gap-4 text-[10px] text-charcoal/40 font-bold uppercase tracking-widest">
+                                    <div className="flex items-center gap-4 text-[10px] text-foreground/40 font-bold uppercase tracking-widest">
                                         <div className="flex items-center gap-1">
                                             <Calendar size={12} className="text-gold" />
                                             {post.date}
@@ -62,11 +62,11 @@ const Blog = () => {
                                         </div>
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-charcoal group-hover:text-gold transition-colors leading-tight uppercase tracking-tight">
+                                    <h3 className="text-xl font-bold text-foreground group-hover:text-gold transition-colors leading-tight uppercase tracking-tight">
                                         {post.title}
                                     </h3>
 
-                                    <p className="text-charcoal/60 text-sm leading-relaxed line-clamp-2 font-medium">
+                                    <p className="text-foreground/60 text-sm leading-relaxed line-clamp-2 font-medium">
                                         {post.excerpt}
                                     </p>
 

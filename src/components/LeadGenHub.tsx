@@ -47,7 +47,7 @@ const LeadGenHub = () => {
     };
 
     return (
-        <section id="contact" className="py-24 bg-background relative overflow-hidden transition-colors duration-500">
+        <section id="contact" className="py-24 bg-background relative overflow-hidden transition-colors duration-500 scroll-mt-24">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
 
@@ -68,7 +68,7 @@ const LeadGenHub = () => {
                                 "Fixed Pricing Structure",
                                 "Free Vastu Plan"
                             ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-4 text-charcoal font-bold uppercase tracking-widest text-sm">
+                                <div key={i} className="flex items-center gap-4 text-foreground font-bold uppercase tracking-widest text-sm">
                                     <div className="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                                         <CheckCircle2 size={16} />
                                     </div>

@@ -16,11 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://abhiramconstructions.com'),
   title: "Abhiram Constructions | Luxury Home Builders in Hyderabad",
   description: "Expert Construction in Uppal & Ghatkesar starting at ₹1499/- SFT. Specialists in luxury duplexes, independent houses, and premium apartments. Building trust since 2010.",
   keywords: ["Construction Uppal", "Builders Ghatkesar", "Abhiram Constructions", "Luxury Duplex Hyderabad", "House Construction Cost Hyderabad"],
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 
