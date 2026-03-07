@@ -156,12 +156,12 @@ const Portfolio = () => {
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <section id="portfolio" className="py-24 bg-white relative">
+        <section id="portfolio" className="py-24 bg-background relative transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 text-center md:text-left">
                     <div>
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Our Portfolio</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-charcoal uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight">
                             Selected <span className="text-gold">Masterpieces</span>
                         </h2>
                     </div>
@@ -174,7 +174,7 @@ const Portfolio = () => {
                                 onClick={() => setActiveCategory(cat.id)}
                                 className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${activeCategory === cat.id
                                     ? 'bg-gold text-white border-gold shadow-lg shadow-gold/20'
-                                    : 'text-charcoal/60 border-marble-gray/50 hover:border-gold hover:text-gold'
+                                    : 'text-foreground/60 border-marble-gray/50 hover:border-gold hover:text-gold'
                                     }`}
                             >
                                 <cat.icon size={14} />
@@ -196,11 +196,25 @@ const Portfolio = () => {
                     </AnimatePresence>
                 </div>
 
+                {/* Trust Partners / Brands Section */}
+                <div className="mt-24 pt-16 border-t border-marble-gray/30">
+                    <div className="text-center mb-10">
+                        <span className="text-[10px] text-foreground/30 font-black uppercase tracking-[0.4em]">Brands of Excellence</span>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                        {['UltraTech', 'Jaquar', 'TATA TISCON', 'Asian Paints', 'Saint-Gobain'].map((brand) => (
+                            <span key={brand} className="text-lg md:text-xl font-black text-foreground tracking-tighter uppercase whitespace-nowrap">
+                                {brand}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
                 {/* View All CTA */}
-                <div className="mt-16 text-center">
-                    <button className="text-charcoal font-black uppercase tracking-[0.3em] text-sm hover:text-gold transition-colors flex items-center gap-2 mx-auto group">
+                <div className="mt-20 text-center">
+                    <button className="text-[10px] text-foreground font-black uppercase tracking-[0.4em] hover:text-gold transition-colors flex items-center gap-3 mx-auto group">
                         Discover More Projects
-                        <div className="w-10 h-px bg-gold group-hover:w-16 transition-all duration-300" />
+                        <div className="w-12 h-px bg-gold group-hover:w-20 transition-all duration-300" />
                     </button>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import Transparency from "@/components/Transparency";
 import CostEstimator from "@/components/CostEstimator";
 import LeadGenHub from "@/components/LeadGenHub";
 import Blog from "@/components/Blog";
+import StyleMatcher from "@/components/StyleMatcher";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Concierge />
       <Transparency />
       <CostEstimator />
+      <StyleMatcher />
       <LeadGenHub />
       <Blog />
     </>

@@ -76,14 +76,14 @@ const Footer = () => {
                                     Uppal & Ghatkesar Area,<br />Hyderabad, Telangana 500092
                                 </span>
                             </div>
-                            <div className="flex items-center gap-3 text-sm text-charcoal/60 leading-relaxed">
+                            <a href="tel:+917799954555" className="flex items-center gap-3 text-sm text-charcoal/60 leading-relaxed hover:text-gold transition-colors duration-300">
                                 <Phone size={18} className="text-gold flex-shrink-0" />
                                 <span>+91 77999 54555</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-sm text-charcoal/60 leading-relaxed">
+                            </a>
+                            <a href="mailto:aravindjilla9@gmail.com" className="flex items-center gap-3 text-sm text-charcoal/60 leading-relaxed hover:text-gold transition-colors duration-300">
                                 <Mail size={18} className="text-gold flex-shrink-0" />
-                                <span>info@abhiramconstructions.com</span>
-                            </div>
+                                <span>aravindjilla9@gmail.com</span>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -29,15 +29,15 @@ const benefits = [
 
 export default function Concierge() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-24 bg-background relative overflow-hidden transition-colors duration-500">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-20">
                     <div className="lg:w-1/2">
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Lifetime Commitment</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-charcoal uppercase tracking-tight mb-8">
+                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight mb-8">
                             The <span className="text-gold">Abhiram</span> Concierge
                         </h2>
-                        <p className="text-charcoal/60 text-lg mb-12 font-medium leading-relaxed">
+                        <p className="text-foreground/60 text-lg mb-12 font-medium leading-relaxed">
                             We don&apos;t just hand over keys; we hand over a promise. Our Concierge service ensures that your dream home stays in pristine condition, backed by experts who built it.
                         </p>
 
@@ -54,8 +54,8 @@ export default function Concierge() {
                                     <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold">
                                         <item.icon size={20} />
                                     </div>
-                                    <h4 className="text-sm font-black text-charcoal uppercase tracking-widest">{item.title}</h4>
-                                    <p className="text-xs text-charcoal/50 leading-relaxed font-medium">{item.desc}</p>
+                                    <h4 className="text-sm font-black text-foreground uppercase tracking-widest">{item.title}</h4>
+                                    <p className="text-xs text-foreground/50 leading-relaxed font-medium">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -68,16 +68,16 @@ export default function Concierge() {
                                 <div className="w-24 h-24 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-8">
                                     <ShieldCheck size={48} />
                                 </div>
-                                <h3 className="text-2xl font-black text-charcoal uppercase tracking-wider mb-4">Quality Certified</h3>
-                                <p className="text-charcoal/60 text-sm font-medium mb-10">
+                                <h3 className="text-2xl font-black text-foreground uppercase tracking-wider mb-4">Quality Certified</h3>
+                                <p className="text-foreground/60 text-sm font-medium mb-10">
                                     Every project at Abhiram Constructions undergoes a 120-point quality check before the final handover.
                                 </p>
 
                                 <div className="space-y-4 w-full">
                                     {['Structural Stability Certificate', 'Material Quality Reports', 'Vastu Certification'].map((cert) => (
-                                        <div key={cert} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-marble-gray/30 shadow-sm">
+                                        <div key={cert} className="flex items-center gap-3 bg-foreground/5 p-4 rounded-xl border border-gold/10 shadow-sm backdrop-blur-md">
                                             <CheckCircle size={18} className="text-gold" />
-                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-charcoal">{cert}</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground">{cert}</span>
                                         </div>
                                     ))}
                                 </div>

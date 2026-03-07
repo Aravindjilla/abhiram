@@ -37,7 +37,7 @@ const Header = () => {
                         A
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-xl font-bold tracking-wider text-charcoal">ABHIRAM</span>
+                        <span className={`text-xl font-bold tracking-wider transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}>ABHIRAM</span>
                         <span className="text-[10px] tracking-[0.2em] text-gold font-semibold uppercase">Constructions</span>
                     </div>
                 </Link>
@@ -48,7 +48,7 @@ const Header = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-semibold text-charcoal hover:text-gold transition-colors duration-300 uppercase tracking-widest"
+                            className={`text-sm font-semibold hover:text-gold transition-colors duration-300 uppercase tracking-widest ${isScrolled ? 'text-foreground' : 'text-white'}`}
                         >
                             {link.name}
                         </Link>
@@ -60,9 +60,8 @@ const Header = () => {
                     </a>
                 </nav>
 
-                {/* Mobile Toggle */}
                 <button
-                    className="md:hidden text-charcoal"
+                    className={`md:hidden transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Toggle menu"
                 >

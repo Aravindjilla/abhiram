@@ -30,10 +30,10 @@ const Transparency = () => {
                     {/* Trust Badges */}
                     <div className="order-2 lg:order-1">
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Transparency First</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-charcoal uppercase tracking-tight mb-8">
+                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight mb-8">
                             Quality You Can <span className="text-gold">Verify</span>
                         </h2>
-                        <p className="text-charcoal/60 text-lg mb-12 max-w-xl">
+                        <p className="text-foreground/60 text-lg mb-12 max-w-xl">
                             We believe in 100% transparency. From the steel we use to the paints on your walls, we only partner with industry leaders to ensure your home lasts for generations.
                         </p>
 
@@ -51,8 +51,8 @@ const Transparency = () => {
                                         <badge.icon size={24} />
                                     </div>
                                     <div>
-                                        <h4 className="text-charcoal font-bold uppercase tracking-wider text-sm mb-1">{badge.title}</h4>
-                                        <p className="text-charcoal/50 text-xs font-medium">{badge.desc}</p>
+                                        <h4 className="text-foreground font-bold uppercase tracking-wider text-sm mb-1">{badge.title}</h4>
+                                        <p className="text-foreground/50 text-xs font-medium">{badge.desc}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -66,7 +66,7 @@ const Transparency = () => {
                             <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-gold rounded-tr-3xl opacity-20" />
                             <div className="absolute bottom-0 left-0 w-24 h-24 border-b-2 border-l-2 border-gold rounded-bl-3xl opacity-20" />
 
-                            <h3 className="text-center text-charcoal/40 font-bold uppercase tracking-[0.2em] text-[10px] mb-12">Authorized Material Partners</h3>
+                            <h3 className="text-center text-foreground/40 font-bold uppercase tracking-[0.2em] text-[10px] mb-12">Authorized Material Partners</h3>
 
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                                 {brands.map((brand, i) => (
@@ -78,7 +78,7 @@ const Transparency = () => {
                                         transition={{ delay: i * 0.05 }}
                                         className="relative group h-32"
                                     >
-                                        <div className="absolute inset-0 bg-white rounded-2xl p-4 shadow-sm border border-marble-gray/30 group-hover:border-gold/30 transition-all duration-500 overflow-hidden flex items-center justify-center">
+                                        <div className="absolute inset-0 bg-background rounded-2xl p-4 shadow-sm border border-marble-gray/30 group-hover:border-gold/30 transition-all duration-500 overflow-hidden flex items-center justify-center">
                                             {/* Representational Image with Overlay */}
                                             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                                                 <Image
@@ -93,8 +93,7 @@ const Transparency = () => {
                                             {/* Stylized Brand Name */}
                                             <div className="relative z-10 text-center">
                                                 <span
-                                                    className="text-xs font-black uppercase tracking-[0.2em] transition-colors duration-500"
-                                                    style={{ color: '#36454F' }}
+                                                    className="text-xs font-black uppercase tracking-[0.2em] transition-colors duration-500 text-foreground"
                                                 >
                                                     {brand.name}
                                                 </span>

@@ -16,7 +16,7 @@
   --card-bg: rgba(255, 255, 255, 0.7);
 }
 
-[data-theme='dark'] {
+.dark {
   --background: #0f1115;
   --foreground: #f2f2f2;
   --gold: #D4AF37;
@@ -97,8 +97,13 @@ body {
 }
 
 @keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 .btn-gold:hover {

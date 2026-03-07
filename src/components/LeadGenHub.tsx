@@ -21,6 +21,7 @@ const LeadGenHub = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
+    const [touched, setTouched] = useState({ name: false, phone: false });
 
     const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 3));
     const prevStep = () => {
@@ -30,14 +31,6 @@ const LeadGenHub = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        // Basic Indian Phone Validation (10 digits)
-        const phoneRegex = /^[6-9]\d{9}$/;
-        if (!phoneRegex.test(formData.phone)) {
-            setError('Please enter a valid 10-digit phone number.');
-            return;
-        }
-
         setError('');
         setIsSubmitting(true);
 
@@ -49,8 +42,8 @@ const LeadGenHub = () => {
     };
 
     const updateFormData = (field: string, value: string) => {
-        setFormData((prev) => ({ ...prev, [field]: value }));
-        if (field === 'phone') setError('');
+        setFormData((prev: any) => ({ ...prev, [field]: value }));
+        setError(''); // Clear error whenever any field changes
     };
 
     return (
@@ -90,50 +83,121 @@ const LeadGenHub = () => {
                         <div className="glass p-8 md:p-12 rounded-3xl border-2 border-gold/10 shadow-2xl relative z-10">
                             {isSubmitted ? (
                                 <motion.div
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    className="text-center py-12"
+                                    initial="initial"
+                                    animate="animate"
+                                    variants={{
+                                        initial: { opacity: 0 },
+                                        animate: { opacity: 1, transition: { staggerChildren: 0.2 } }
+                                    }}
+                                    className="text-center py-12 relative overflow-hidden"
                                 >
-                                    <div className="w-20 h-20 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                                        <CheckCircle2 size={48} />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-charcoal mb-4 uppercase tracking-wider">Request Received!</h3>
-                                    <p className="text-charcoal/60 mb-8 max-w-xs mx-auto">
-                                        Thank you {formData.name}! Our team will contact you shortly on {formData.phone} with your quote.
-                                    </p>
-                                    <button
-                                        onClick={() => { setIsSubmitted(false); setCurrentStep(1); setFormData({ plotSize: '', location: '', name: '', phone: '' }) }}
-                                        className="text-gold font-bold uppercase tracking-widest text-sm hover:underline"
+                                    {/* Animated Success Icon Container */}
+                                    <motion.div
+                                        variants={{
+                                            initial: { scale: 0, opacity: 0 },
+                                            animate: { scale: 1, opacity: 1, transition: { type: 'spring', damping: 12, stiffness: 100 } }
+                                        }}
+                                        className="relative w-24 h-24 mx-auto mb-8"
                                     >
-                                        Send Another Request
-                                    </button>
+                                        <div className="absolute inset-0 bg-gold/20 rounded-full animate-ping" />
+                                        <div className="relative w-full h-full bg-gold text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+                                            <CheckCircle2 size={48} strokeWidth={1.5} />
+                                        </div>
+                                    </motion.div>
+
+                                    <motion.h3
+                                        variants={{
+                                            initial: { y: 20, opacity: 0 },
+                                            animate: { y: 0, opacity: 1 }
+                                        }}
+                                        className="text-3xl font-black text-charcoal mb-4 uppercase tracking-[0.2em]"
+                                    >
+                                        Blueprint <span className="text-gold">Acquired</span>
+                                    </motion.h3>
+
+                                    <motion.div
+                                        variants={{
+                                            initial: { y: 20, opacity: 0 },
+                                            animate: { y: 0, opacity: 1 }
+                                        }}
+                                        className="space-y-4 mb-10"
+                                    >
+                                        <p className="text-charcoal/80 text-lg font-medium leading-relaxed max-w-xs mx-auto">
+                                            Your blueprint for luxury is being reviewed by our chief architect.
+                                        </p>
+                                        <div className="h-0.5 w-12 bg-gold/30 mx-auto" />
+                                        <p className="text-charcoal/50 text-xs font-bold uppercase tracking-widest">
+                                            Our concierge will contact you on <br />
+                                            <span className="text-charcoal font-black">{formData.phone}</span> <br />
+                                            within 24 hours.
+                                        </p>
+                                    </motion.div>
+
+                                    <motion.button
+                                        variants={{
+                                            initial: { opacity: 0 },
+                                            animate: { opacity: 1 }
+                                        }}
+                                        onClick={() => { setIsSubmitted(false); setCurrentStep(1); setFormData({ plotSize: '', location: '', name: '', phone: '' }) }}
+                                        className="text-[10px] text-gold font-black uppercase tracking-[0.5em] hover:opacity-70 transition-opacity flex items-center gap-2 mx-auto"
+                                    >
+                                        <span className="w-8 h-px bg-gold/30" />
+                                        New Journey
+                                        <span className="w-8 h-px bg-gold/30" />
+                                    </motion.button>
                                 </motion.div>
                             ) : (
                                 <>
-                                    {/* Progress Header */}
                                     <div className="flex justify-between mb-12 relative">
-                                        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-marble-gray/30 -translate-y-1/2 z-0" />
-                                        <div
-                                            className="absolute top-1/2 left-0 h-0.5 bg-gold transition-all duration-500 -translate-y-1/2 z-0"
-                                            style={{ width: `${((currentStep - 1) / 2) * 100}%` }}
-                                        />
+                                        {/* Centered Line Container */}
+                                        <div className="absolute top-[20px] left-[20px] right-[20px] h-0.5 bg-marble-gray/20 z-0">
+                                            {/* Progress line */}
+                                            <motion.div
+                                                className="h-full bg-gold"
+                                                initial={{ width: 0 }}
+                                                animate={{ width: `${((currentStep - 1) / 2) * 100}%` }}
+                                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                            />
+                                        </div>
 
-                                        {steps.map((step) => (
-                                            <div key={step.id} className="relative z-10 flex flex-col items-center">
-                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${currentStep >= step.id ? 'bg-gold border-gold text-white' : 'bg-white border-marble-gray/50 text-charcoal/30'
-                                                    }`}>
-                                                    <step.icon size={18} />
+                                        {steps.map((step) => {
+                                            const isCompleted = currentStep > step.id;
+                                            const isActive = currentStep === step.id;
+
+                                            return (
+                                                <div key={step.id} className="relative z-10 flex flex-col items-center">
+                                                    <motion.div
+                                                        animate={{
+                                                            scale: isActive ? 1.1 : 1,
+                                                            backgroundColor: isCompleted || isActive ? 'var(--gold)' : '#ffffff'
+                                                        }}
+                                                        className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-500 shadow-sm ring-4 ring-white ${isCompleted || isActive
+                                                            ? 'border-gold text-white'
+                                                            : 'border-marble-gray/50 text-charcoal/20'
+                                                            }`}
+                                                    >
+                                                        {isCompleted ? (
+                                                            <motion.div
+                                                                initial={{ scale: 0, rotate: -45 }}
+                                                                animate={{ scale: 1, rotate: 0 }}
+                                                            >
+                                                                <CheckCircle2 size={18} />
+                                                            </motion.div>
+                                                        ) : (
+                                                            <step.icon size={18} />
+                                                        )}
+                                                    </motion.div>
+                                                    <span className={`text-[10px] uppercase font-black tracking-[0.2em] mt-3 transition-colors duration-500 ${isActive ? 'text-gold' : isCompleted ? 'text-charcoal/60' : 'text-charcoal/20'
+                                                        }`}>
+                                                        {step.title}
+                                                    </span>
                                                 </div>
-                                                <span className={`text-[10px] uppercase font-bold tracking-widest mt-2 ${currentStep >= step.id ? 'text-gold' : 'text-charcoal/30'
-                                                    }`}>
-                                                    {step.title}
-                                                </span>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
 
                                     {/* Form Steps */}
-                                    <form onSubmit={handleSubmit} className="min-h-[300px] flex flex-col justify-between">
+                                    <form onSubmit={handleSubmit} noValidate className="min-h-[300px] flex flex-col justify-between">
                                         <AnimatePresence mode="wait">
                                             {currentStep === 1 && (
                                                 <motion.div
@@ -200,22 +264,33 @@ const LeadGenHub = () => {
                                                     <h4 className="text-xl font-bold text-charcoal uppercase tracking-wide mb-6">Contact Details</h4>
                                                     <div className="space-y-4">
                                                         <input
-                                                            required
                                                             type="text"
                                                             placeholder="Full Name"
                                                             value={formData.name}
                                                             onChange={(e) => updateFormData('name', e.target.value)}
-                                                            className="w-full p-4 rounded-xl border-2 border-marble-gray/30 focus:border-gold outline-none transition-all font-medium text-charcoal"
+                                                            onBlur={() => setTouched(prev => ({ ...prev, name: true }))}
+                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-charcoal outline-none ${touched.name && !formData.name.trim() ? 'border-red-500 bg-red-50/50' : 'border-marble-gray/30 focus:border-gold'}`}
                                                         />
                                                         <input
-                                                            required
                                                             type="tel"
                                                             placeholder="Phone Number (10-digit)"
                                                             value={formData.phone}
                                                             onChange={(e) => updateFormData('phone', e.target.value.replace(/\D/g, '').slice(0, 10))}
-                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-charcoal outline-none ${error ? 'border-red-500 bg-red-50' : 'border-marble-gray/30 focus:border-gold'}`}
+                                                            onBlur={() => setTouched(prev => ({ ...prev, phone: true }))}
+                                                            className={`w-full p-4 rounded-xl border-2 transition-all font-medium text-charcoal outline-none ${(touched.phone && formData.phone.length > 0 && formData.phone.length < 10) || (touched.phone && error.includes('phone')) ? 'border-red-500 bg-red-50/50' : 'border-marble-gray/30 focus:border-gold'}`}
                                                         />
-                                                        {error && <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest">{error}</p>}
+                                                        {touched.phone && formData.phone.length > 0 && formData.phone.length < 10 && (
+                                                            <p className="text-red-500 text-[10px] font-bold uppercase tracking-widest pl-2">Please enter all 10 digits</p>
+                                                        )}
+                                                        {error && (
+                                                            <motion.p
+                                                                initial={{ opacity: 0, y: -10 }}
+                                                                animate={{ opacity: 1, y: 0 }}
+                                                                className="text-red-500 text-[10px] font-bold uppercase tracking-widest pl-2"
+                                                            >
+                                                                {error}
+                                                            </motion.p>
+                                                        )}
                                                     </div>
                                                 </motion.div>
                                             )}
@@ -247,8 +322,8 @@ const LeadGenHub = () => {
                                             ) : (
                                                 <button
                                                     type="submit"
-                                                    disabled={isSubmitting}
-                                                    className="flex-1 p-4 rounded-xl btn-gold text-xs uppercase tracking-[0.2em] shadow-xl shadow-gold/30 flex items-center justify-center gap-2 disabled:opacity-70"
+                                                    disabled={isSubmitting || !formData.name.trim() || formData.phone.length < 10}
+                                                    className="flex-1 p-4 rounded-xl btn-gold text-xs uppercase tracking-[0.2em] shadow-xl shadow-gold/30 flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed disabled:grayscale"
                                                 >
                                                     {isSubmitting ? (
                                                         <>
