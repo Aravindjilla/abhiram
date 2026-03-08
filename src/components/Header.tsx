@@ -27,18 +27,18 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'py-3 glass' : 'py-6 bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'py-3 glass' : 'py-4 md:py-6 bg-transparent'
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 border-2 border-gold flex items-center justify-center font-bold text-gold text-xl group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                    <div className="w-8 h-8 md:w-10 md:h-10 border-2 border-gold flex items-center justify-center font-bold text-gold text-lg md:text-xl group-hover:bg-gold group-hover:text-white transition-colors duration-300">
                         A
                     </div>
                     <div className="flex flex-col">
-                        <span className={`text-xl font-bold tracking-wider transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}>ABHIRAM</span>
-                        <span className="text-[10px] tracking-[0.2em] text-gold font-semibold uppercase">Constructions</span>
+                        <span className={`text-lg md:text-xl font-bold tracking-wider transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}>ABHIRAM</span>
+                        <span className="text-[8px] md:text-[10px] tracking-[0.2em] text-gold font-semibold uppercase">Constructions</span>
                     </div>
                 </Link>
 
