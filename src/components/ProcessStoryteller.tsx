@@ -40,6 +40,18 @@ const steps = [
 const ProcessStoryteller = () => {
     return (
         <section id="process" className="py-24 bg-marble relative overflow-hidden scroll-mt-24">
+            {/* Blueprint Overlay */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="blueprint-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                            <circle cx="0" cy="0" r="1" fill="currentColor" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#blueprint-grid)" />
+                </svg>
+            </div>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
                     <motion.span
@@ -52,7 +64,7 @@ const ProcessStoryteller = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight"
+                        className="text-3xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight"
                     >
                         Our Construction <span className="text-gold">Journey</span>
                     </motion.h2>

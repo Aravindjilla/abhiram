@@ -25,7 +25,7 @@ export default function CostEstimator() {
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Interactive Tool</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight mb-6">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-6">
                             Instant <span className="text-gold">Cost Estimator</span>
                         </h2>
                         <p className="text-foreground/60 max-w-2xl mx-auto font-medium">
@@ -42,7 +42,7 @@ export default function CostEstimator() {
                                         <Ruler size={18} className="text-gold" />
                                         Built-up Area (SFT)
                                     </label>
-                                    <span className="text-gold font-black text-xl">{sft} SFT</span>
+                                    <span className="text-gold font-extrabold text-xl">{sft} SFT</span>
                                 </div>
                                 <input
                                     type="range"
@@ -69,7 +69,7 @@ export default function CostEstimator() {
                                         <button
                                             key={item.id}
                                             onClick={() => setQuality(item)}
-                                            className={`py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${quality.id === item.id
+                                            className={`py-4 rounded-xl text-[10px] font-extrabold uppercase tracking-widest transition-all ${quality.id === item.id
                                                 ? 'bg-gold text-white shadow-xl shadow-gold/20'
                                                 : 'bg-foreground/5 text-foreground/40 hover:bg-foreground/10'
                                                 }`}
@@ -103,7 +103,7 @@ export default function CostEstimator() {
 
                             <TrendingUp className="text-gold mb-6" size={48} />
                             <h3 className="text-foreground/40 font-bold uppercase tracking-[0.2em] text-xs mb-2">Estimated Range</h3>
-                            <div className="text-4xl md:text-6xl font-black text-foreground mb-4">
+                            <div className="text-4xl md:text-6xl font-extrabold text-foreground mb-4">
                                 ₹{(estimate / 100000).toFixed(1)}L <span className="text-gold text-2xl md:text-4xl">-</span> ₹{((estimate * 1.05) / 100000).toFixed(1)}L
                             </div>
                             <p className="text-foreground/40 text-[10px] font-bold uppercase tracking-widest mb-10 max-w-[200px]">

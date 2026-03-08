@@ -54,7 +54,7 @@ const LeadGenHub = () => {
                     {/* Text Content */}
                     <div>
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Get a Quote</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight mb-8">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-8">
                             Start Your <span className="text-gold">Home Journey</span> Today
                         </h2>
                         <p className="text-foreground/60 text-lg mb-12 max-w-xl">
@@ -110,7 +110,7 @@ const LeadGenHub = () => {
                                             initial: { y: 20, opacity: 0 },
                                             animate: { y: 0, opacity: 1 }
                                         }}
-                                        className="text-3xl font-black text-foreground mb-4 uppercase tracking-[0.2em]"
+                                        className="text-3xl font-extrabold text-foreground mb-4 uppercase tracking-[0.2em]"
                                     >
                                         Blueprint <span className="text-gold">Acquired</span>
                                     </motion.h3>
@@ -128,7 +128,7 @@ const LeadGenHub = () => {
                                         <div className="h-0.5 w-12 bg-gold/30 mx-auto" />
                                         <p className="text-foreground/50 text-xs font-bold uppercase tracking-widest">
                                             Our concierge will contact you on <br />
-                                            <span className="text-foreground font-black">{formData.phone}</span> <br />
+                                            <span className="text-foreground font-extrabold">{formData.phone}</span> <br />
                                             within 24 hours.
                                         </p>
                                     </motion.div>
@@ -139,7 +139,7 @@ const LeadGenHub = () => {
                                             animate: { opacity: 1 }
                                         }}
                                         onClick={() => { setIsSubmitted(false); setCurrentStep(1); setFormData({ plotSize: '', location: '', name: '', phone: '' }) }}
-                                        className="text-[10px] text-gold font-black uppercase tracking-[0.5em] hover:opacity-70 transition-opacity flex items-center gap-2 mx-auto"
+                                        className="text-[10px] text-gold font-extrabold uppercase tracking-[0.5em] hover:opacity-70 transition-opacity flex items-center gap-2 mx-auto"
                                     >
                                         <span className="w-8 h-px bg-gold/30" />
                                         New Journey
@@ -187,7 +187,7 @@ const LeadGenHub = () => {
                                                             <step.icon size={18} />
                                                         )}
                                                     </motion.div>
-                                                    <span className={`text-[10px] uppercase font-black tracking-[0.2em] mt-3 transition-colors duration-500 ${isActive ? 'text-gold' : isCompleted ? 'text-foreground/60' : 'text-foreground/20'
+                                                    <span className={`text-[10px] uppercase font-extrabold tracking-[0.2em] mt-3 transition-colors duration-500 ${isActive ? 'text-gold' : isCompleted ? 'text-foreground/60' : 'text-foreground/20'
                                                         }`}>
                                                         {step.title}
                                                     </span>

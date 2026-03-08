@@ -15,7 +15,7 @@ const Footer = () => {
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-xl font-bold tracking-wider text-foreground">ABHIRAM</span>
-                                <span className="text-[10px] tracking-[0.2em] text-gold font-semibold uppercase">Constructions</span>
+                                <span className="text-[10px] tracking-[0.25em] text-gold font-bold uppercase">Constructions</span>
                             </div>
                         </Link>
                         <p className="text-sm text-foreground/60 leading-relaxed max-w-xs">
@@ -80,9 +80,9 @@ const Footer = () => {
                                 <Phone size={18} className="text-gold flex-shrink-0" />
                                 <span>+91 77999 54555</span>
                             </a>
-                            <a href="mailto:aravindjilla9@gmail.com" className="flex items-center gap-3 text-sm text-foreground/60 leading-relaxed hover:text-gold transition-colors duration-300">
+                            <a href="mailto:info@abhiramconstructions.com" className="flex items-center gap-3 text-sm text-foreground/60 leading-relaxed hover:text-gold transition-colors duration-300">
                                 <Mail size={18} className="text-gold flex-shrink-0" />
-                                <span>aravindjilla9@gmail.com</span>
+                                <span>info@abhiramconstructions.com</span>
                             </a>
                         </div>
                     </div>

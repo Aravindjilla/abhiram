@@ -34,7 +34,7 @@ const Hero = () => {
                         sizes="100vw"
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/10 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/20 z-10" />
             </motion.div>
 
             {/* Content */}
@@ -48,8 +48,8 @@ const Hero = () => {
                     <span className="inline-block px-4 py-1 border border-gold/40 text-gold text-xs font-bold uppercase tracking-[0.3em] mb-6 rounded-full glass-gold">
                         Est. 2010 | Hyderabad
                     </span>
-                    <h1 className="text-3xl md:text-7xl lg:text-8xl font-black text-white mb-6 uppercase tracking-tight leading-[0.95] md:leading-[0.9] max-w-[15ch] mx-auto">
-                        Building <span className="text-gold">Trust</span> <br />
+                    <h1 className="text-4xl md:text-7xl lg:text-9xl font-medium text-white mb-6 uppercase tracking-tight leading-[0.95] md:leading-[0.9] max-w-[15ch] mx-auto font-serif italic">
+                        Building <span className="text-gold not-italic font-sans font-extrabold">Trust</span> <br />
                         Into Every Brick.
                     </h1>
                     <div className="flex flex-col items-center gap-8 mb-16">
@@ -58,7 +58,7 @@ const Hero = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.4 }}
-                            className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-5 md:py-2.5 bg-white/[0.05] backdrop-blur-xl border border-white/10 rounded-full shadow-2xl group hover:border-gold/30 transition-all duration-500"
+                            className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-5 md:py-2.5 bg-white/[0.12] backdrop-blur-2xl border border-white/20 rounded-full shadow-[0_8px_32px_0_rgba(212,175,55,0.15)] group hover:border-gold/50 transition-all duration-500"
                         >
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
@@ -66,12 +66,12 @@ const Hero = () => {
                             </span>
                             <span className="text-[9px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">Starting At</span>
                             <span className="h-3 md:h-4 w-px bg-white/20" />
-                            <span className="text-base md:text-xl font-black text-white group-hover:text-gold transition-colors">₹1499 <span className="text-[10px] md:text-xs opacity-40 font-bold">/ SFT</span></span>
+                            <span className="text-base md:text-xl font-extrabold text-white group-hover:text-gold transition-colors">₹1499 <span className="text-[10px] md:text-xs opacity-40 font-bold">/ SFT</span></span>
                         </motion.div>
 
-                        <p className="text-base md:text-2xl text-white/80 max-w-2xl mx-auto font-medium leading-relaxed px-4 md:px-0">
+                        <p className="text-lg md:text-2xl text-white max-w-3xl mx-auto font-serif italic leading-relaxed px-4 md:px-0 tracking-wide drop-shadow-md">
                             Premium turnkey residential solutions in Hyderabad’s <br className="hidden md:block" />
-                            <span className="text-white border-b border-gold/30 pb-0.5">East Corridor.</span> Crafting spaces that define your legacy.
+                            <span className="text-white border-b border-gold/40 pb-0.5 not-italic font-sans text-sm md:text-base uppercase tracking-[0.2em] font-bold">East Corridor.</span> Crafting spaces that define your legacy.
                         </p>
                     </div>
 

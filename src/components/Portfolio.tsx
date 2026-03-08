@@ -161,7 +161,7 @@ const Portfolio = () => {
                 <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 text-center md:text-left">
                     <div>
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Our Portfolio</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight">
                             Selected <span className="text-gold">Masterpieces</span>
                         </h2>
                     </div>
@@ -199,11 +199,11 @@ const Portfolio = () => {
                 {/* Trust Partners / Brands Section */}
                 <div className="mt-24 pt-16 border-t border-marble-gray/30">
                     <div className="text-center mb-10">
-                        <span className="text-[10px] text-foreground/30 font-black uppercase tracking-[0.4em]">Brands of Excellence</span>
+                        <span className="text-[10px] text-foreground/30 font-extrabold uppercase tracking-[0.4em]">Brands of Excellence</span>
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
                         {['UltraTech', 'Jaquar', 'TATA TISCON', 'Asian Paints', 'Saint-Gobain'].map((brand) => (
-                            <span key={brand} className="text-lg md:text-xl font-black text-foreground tracking-tighter uppercase whitespace-nowrap">
+                            <span key={brand} className="text-lg md:text-xl font-extrabold text-foreground tracking-tighter uppercase whitespace-nowrap">
                                 {brand}
                             </span>
                         ))}
@@ -212,7 +212,7 @@ const Portfolio = () => {
 
                 {/* View All CTA */}
                 <div className="mt-20 text-center">
-                    <button className="text-[10px] text-foreground font-black uppercase tracking-[0.4em] hover:text-gold transition-colors flex items-center gap-3 mx-auto group">
+                    <button className="text-[10px] text-foreground font-extrabold uppercase tracking-[0.4em] hover:text-gold transition-colors flex items-center gap-3 mx-auto group">
                         Discover More Projects
                         <div className="w-12 h-px bg-gold group-hover:w-20 transition-all duration-300" />
                     </button>

@@ -30,7 +30,7 @@ const Transparency = () => {
                     {/* Trust Badges */}
                     <div className="order-2 lg:order-1">
                         <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Transparency First</span>
-                        <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tight mb-8">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-8">
                             Quality You Can <span className="text-gold">Verify</span>
                         </h2>
                         <p className="text-foreground/60 text-lg mb-12 max-w-xl">
@@ -93,7 +93,7 @@ const Transparency = () => {
                                             {/* Stylized Brand Name */}
                                             <div className="relative z-10 text-center">
                                                 <span
-                                                    className="text-xs font-black uppercase tracking-[0.2em] transition-colors duration-500 text-foreground"
+                                                    className="text-xs font-extrabold uppercase tracking-[0.2em] transition-colors duration-500 text-foreground"
                                                 >
                                                     {brand.name}
                                                 </span>

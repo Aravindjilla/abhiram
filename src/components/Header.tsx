@@ -38,7 +38,7 @@ const Header = () => {
                     </div>
                     <div className="flex flex-col">
                         <span className={`text-lg md:text-xl font-bold tracking-wider transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}>ABHIRAM</span>
-                        <span className="text-[8px] md:text-[10px] tracking-[0.2em] text-gold font-semibold uppercase">Constructions</span>
+                        <span className="text-[9px] md:text-[11px] tracking-[0.25em] text-gold font-bold uppercase drop-shadow-sm">Constructions</span>
                     </div>
                 </Link>
 

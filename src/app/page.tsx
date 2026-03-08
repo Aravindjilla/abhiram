@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ProcessStoryteller from "@/components/ProcessStoryteller";
+import ArchitectsVision from "@/components/ArchitectsVision";
 import Portfolio from "@/components/Portfolio";
 import Concierge from "@/components/Concierge";
 import Transparency from "@/components/Transparency";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <ProcessStoryteller />
+      <ArchitectsVision />
       <Portfolio />
       <Concierge />
       <Transparency />
