@@ -6,12 +6,12 @@ import { ShieldCheck, Award, ThumbsUp, Medal } from 'lucide-react';
 import Image from 'next/image';
 
 const brands = [
-    { name: 'Jai Raj Steel', logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop', color: '#B22222' }, // Steel rebar representational
-    { name: 'Ultratech', logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop', color: '#FFD700' }, // Cement conceptual
-    { name: 'Finolex', logo: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=200&auto=format&fit=crop', color: '#0047AB' }, // Electrical wires
-    { name: 'Asian Paints', logo: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?q=80&w=200&auto=format&fit=crop', color: '#E31E24' }, // Paint drops
-    { name: 'Astral Pipes', logo: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop', color: '#00A86B' }, // CPVC Pipes
-    { name: 'Kajaria Tiles', logo: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=200&auto=format&fit=crop', color: '#808080' }, // Ceramic tiles
+    { name: 'Jai Raj Steel', logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop', color: '#B22222', spec: 'Premium Grade Steel' },
+    { name: 'Ultratech / Ramco', logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop', color: '#FFD700', spec: 'Grade 53 Cement' },
+    { name: 'Finolex', logo: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=200&auto=format&fit=crop', color: '#0047AB', spec: 'Fire Resistant Cables' },
+    { name: 'Asian Paints', logo: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?q=80&w=200&auto=format&fit=crop', color: '#E31E24', spec: 'Royal Premium Finish' },
+    { name: 'Teakwood', logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop', color: '#8B4513', spec: 'Main Door Elegance' },
+    { name: 'River Sand', logo: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop', color: '#C2B280', spec: '100% Pure Sand' },
 ];
 
 const badges = [
@@ -29,12 +29,12 @@ const Transparency = () => {
 
                     {/* Trust Badges */}
                     <div className="order-2 lg:order-1">
-                        <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Transparency First</span>
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-8">
-                            Quality You Can <span className="text-gold">Verify</span>
+                        <span className="text-gold font-bold uppercase tracking-[0.3em] text-xs mb-4 block font-sans">Corporate Integrity</span>
+                        <h2 className="text-3xl md:text-6xl font-serif italic text-foreground tracking-tight mb-8 leading-tight">
+                            The Anatomy of <span className="text-gold not-italic font-sans font-extrabold uppercase ring-1 ring-gold/20 px-2 py-0.5 rounded">Excellence</span>
                         </h2>
-                        <p className="text-foreground/60 text-lg mb-12 max-w-xl">
-                            We believe in 100% transparency. From the steel we use to the paints on your walls, we only partner with industry leaders to ensure your home lasts for generations.
+                        <p className="text-foreground/70 text-lg mb-12 max-w-xl font-serif italic leading-relaxed">
+                            A masterpiece is only as strong as its components. We source exclusively from industry titans to ensure your legacy stands unshakable for generations.
                         </p>
 
                         <div className="grid sm:grid-cols-2 gap-6">
@@ -66,7 +66,7 @@ const Transparency = () => {
                             <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-gold rounded-tr-3xl opacity-20" />
                             <div className="absolute bottom-0 left-0 w-24 h-24 border-b-2 border-l-2 border-gold rounded-bl-3xl opacity-20" />
 
-                            <h3 className="text-center text-foreground/40 font-bold uppercase tracking-[0.2em] text-[10px] mb-12">Authorized Material Partners</h3>
+                            <h3 className="text-center text-foreground/30 font-bold uppercase tracking-[0.4em] text-[10px] mb-12">Premier Material Standards</h3>
 
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
                                 {brands.map((brand, i) => (
@@ -93,12 +93,15 @@ const Transparency = () => {
                                             {/* Stylized Brand Name */}
                                             <div className="relative z-10 text-center">
                                                 <span
-                                                    className="text-xs font-extrabold uppercase tracking-[0.2em] transition-colors duration-500 text-foreground"
+                                                    className="text-xs font-extrabold uppercase tracking-[0.2em] transition-colors duration-500 text-foreground group-hover:text-gold"
                                                 >
                                                     {brand.name}
                                                 </span>
+                                                <p className="text-[8px] text-foreground/40 font-bold tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                                    {brand.spec}
+                                                </p>
                                                 <div
-                                                    className="h-0.5 w-0 group-hover:w-full mx-auto mt-2 transition-all duration-500"
+                                                    className="h-0.5 w-0 group-hover:w-8 mx-auto mt-2 transition-all duration-500 opacity-50"
                                                     style={{ backgroundColor: brand.color }}
                                                 />
                                             </div>

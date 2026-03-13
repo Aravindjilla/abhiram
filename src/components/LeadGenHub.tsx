@@ -34,11 +34,28 @@ const LeadGenHub = () => {
         setError('');
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+            const response = await fetch('/api/leads', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Something went wrong');
+            }
+
+            setIsSubmitted(true);
+        } catch (err: any) {
+            setError(err.message || 'Failed to submit. Please try again or contact us directly.');
+            console.error('Submission error:', err);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const updateFormData = (field: keyof typeof formData, value: string) => {

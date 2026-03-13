@@ -202,7 +202,7 @@ const Portfolio = () => {
                         <span className="text-[10px] text-foreground/30 font-extrabold uppercase tracking-[0.4em]">Brands of Excellence</span>
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-                        {['UltraTech', 'Jaquar', 'TATA TISCON', 'Asian Paints', 'Saint-Gobain'].map((brand) => (
+                        {['UltraTech', 'Jai Raj Steel', 'Finolex', 'Asian Paints', 'Ramco Cement'].map((brand) => (
                             <span key={brand} className="text-lg md:text-xl font-extrabold text-foreground tracking-tighter uppercase whitespace-nowrap">
                                 {brand}
                             </span>
