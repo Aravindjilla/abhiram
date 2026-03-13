@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const ArchitectsVision = () => {
     return (
@@ -57,10 +58,12 @@ const ArchitectsVision = () => {
                                     transition={{ delay: 0.4 }}
                                     className="relative aspect-[4/5] overflow-hidden border border-white/10 mask-arch shadow-2xl"
                                 >
-                                    <img
+                                    <Image
                                         src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
                                         alt="Architectural Vision"
-                                        className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
+                                        fill
+                                        className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                     />
                                 </motion.div>
                             </div>

@@ -50,8 +50,9 @@ const LeadGenHub = () => {
             }
 
             setIsSubmitted(true);
-        } catch (err: any) {
-            setError(err.message || 'Failed to submit. Please try again or contact us directly.');
+        } catch (err) {
+            const errorMessage = err instanceof Error ? err.message : 'Failed to submit. Please try again or contact us directly.';
+            setError(errorMessage);
             console.error('Submission error:', err);
         } finally {
             setIsSubmitting(false);
